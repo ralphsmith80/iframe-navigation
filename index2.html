@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello World</title>
+  <!--<base href="/hello/">-->
+</head>
+<body>
+  <div>Hello World</div>
+  <script>
+    var log = () => {
+      console.info('location:', window.location)
+      console.info('top location:', window.top.location)
+      console.info('parent location:', window.parent.location)
+      console.info('top gVar:', window.top.gVar)
+    }
+    log()
+    var onClick = (evt) => {
+      console.log('navigate')
+      history.pushState({}, 'html 2', '/check')
+      setTimeout(() => log(), 300)
+    }
+  </script>
+  <button name="button" onclick="onClick()">Navigate</button>
+</body>
+</html>
